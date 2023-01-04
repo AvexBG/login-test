@@ -33,16 +33,18 @@
                 <form onsubmit="return false;" id="form">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1">
+                    <input type="email" class="form-control" id="email" autocomplete="off" required>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <input type="password" class="form-control" id="password" autocomplete="off" required>
                 </div>
+                <div class="alert alert-danger" role="alert" id="error" style="display: none;"></div>
+                <div class="alert alert-success" role="alert" id="success" style="display: none;"></div>
                 <button type="submit" class="btn btn-primary">Login</button>
                 </form>
             </div>
         </div>
-    <script src="./js/login.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>
