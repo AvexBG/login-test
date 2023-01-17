@@ -16,7 +16,7 @@ router.get("/profile", loggedIn, (req, res) => {
         res.render("profile", { title: "Profile Page", status: "loggedIn", user:req.user});
     }
     else {
-        res.render("profile", { status: "no", user: "nothing" });
+        res.render("index", { status: "no", user: "nothing" });
     }
 })
 router.get("/register", (req, res) => {
