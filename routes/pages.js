@@ -11,6 +11,14 @@ router.get("/", loggedIn, (req, res) => {
     }
     res.render("index");
 })
+router.get("/profile", loggedIn, (req, res) => {
+    if (req.user) {
+        res.render("profile", { title: "Profile Page", status: "loggedIn", user:req.user});
+    }
+    else {
+        res.render("profile", { status: "no", user: "nothing" });
+    }
+})
 router.get("/register", (req, res) => {
     res.sendFile("register.html", {root: "./public"});
 })

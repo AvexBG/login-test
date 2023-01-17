@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 
 const login = async (req, res) => {
     const { email, username, password } = req.body;
-    if (!email || !password) return res.json({ status: "error", error: "Please enter your email and password" });
+    if (!email || !password) return res.json({ status: "error", error: "Please enter your email/username and password" });
     else {
         db.query('SELECT * FROM users WHERE email = ? OR username = ?', [email, username], async (Err, result) => {
             if (Err) throw Err;
@@ -14,7 +14,7 @@ const login = async (req, res) => {
                     expiresIn: process.env.JWT_EXPIRES,
                 })
                 const cookieOptions = {
-                    expiresIn: new Date(Date.now() + process.env.COOKIE_EXPIRS * 24 * 60 * 60 * 1000),
+                    expiresIn: new Date(Date.now() + process.env.COOKIE_EXPIRES * 24 * 60 * 60 * 1000),
                     httpOnly: true
                 }
                 res.cookie("userRegistered", token, cookieOptions);
