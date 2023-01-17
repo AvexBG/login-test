@@ -15,11 +15,11 @@ form.addEventListener("submit", () => {
             if (data.status == "error") {
                 success.style.display = "none"
                 error.style.display = "block"
-                error.innertext = data.error
+                error.innerText = data.error
             } else {
                 error.style.display = "none"
                 success.style.display = "block"
-                success.innertext = data.success
+                success.innerText = data.success
             }
         })
 })
